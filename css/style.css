@@ -1761,4 +1761,23 @@ opacity:.9;
         font-size: 34px;
     }
 
+}/* =========================================
+   DETALHES DOS SERVIÇOS
+========================================= */
+
+.service-details {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.service-details li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.service-details li::before {
+    content: "✓ ";
+    font-weight: bold;
 }
