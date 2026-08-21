@@ -56,16 +56,17 @@ z-index:10;
 
 
 
-.logo{
-
-color:white;
-
-font-size:28px;
-
-font-weight:bold;
-
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
 }
 
+.logo img {
+    display: block;
+    width: auto;
+    height: 90px;
+}
 
 
 nav ul{
@@ -97,32 +98,23 @@ font-weight:bold;
 
 
 .hero{
+    height: 100vh;
 
+   background:
+    linear-gradient(
+   rgba(0,0,0,.40),
+rgba(0,0,0,.40)
+    ),
+    url("../images/hero.jpeg");
 
-height:100vh;
+    background-position: center;
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
 
-background:
-
-linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.55)
-),
-
-url("../images/hero.jpeg");
-
-
-background-position:center;
-
-background-size:cover;
-
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -1055,10 +1047,33 @@ margin-bottom:30px;
 
 
 .contact-item span {
-
     color: rgba(255,255,255,.75);
-
 }
+
+.contact-phone {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-phone:hover {
+    color: #ffffff;
+}
+
+.contact-whatsapp {
+    display: inline-block;
+    color: #25D366;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 6px;
+    transition: 0.3s;
+}
+
+.contact-whatsapp:hover {
+    color: #ffffff;
+}
+
+
 
 
 /* FORMULÁRIO */
@@ -1298,6 +1313,7 @@ margin-bottom:30px;
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
     width: 100%;
     box-sizing: border-box;
@@ -1312,6 +1328,7 @@ margin-bottom:30px;
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
     border-color: #002B5B;
     box-shadow: 0 0 0 3px rgba(0, 43, 91, 0.10);
@@ -1619,16 +1636,18 @@ margin-bottom:30px;
 
     .gallery-item {
         width: 100%;
+        height: 280px;
     }
 
     .gallery-item img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
         display: block;
-        border-radius: 12px;
     }
 
-}/* =========================================
+}
+/* =========================================
    SOBRE MIM - TELEMÓVEL
 ========================================= */
 
@@ -1737,11 +1756,46 @@ margin-bottom:30px;
     margin-bottom: 15px;
     color: #444;
 }
+/* =========================================
+   EXPERIÊNCIA E CONFIANÇA - DESTAQUES
+========================================= */
 
+.trust-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 45px auto 40px;
+}
 
-/* MOBILE */
+.trust-feature {
+    background: #f5f7fa;
+    padding: 30px 20px;
+    border-radius: 14px;
+    border-top: 4px solid #d62828;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
 
-@media (max-width: 650px) {
+.trust-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.trust-feature strong {
+    display: block;
+    color: #002B5B;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.trust-feature span {
+    display: block;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}@media (max-width: 650px) {
 
     .trust {
         padding: 80px 6%;
@@ -1751,7 +1805,26 @@ margin-bottom:30px;
         font-size: 34px;
     }
 
-}/* =========================================
+    .trust-features {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 35px;
+    }
+
+    .trust-feature {
+        padding: 25px 20px;
+    }
+
+    .trust-feature strong {
+        font-size: 28px;
+    }
+
+}
+
+/* MOBILE */
+
+
+/* =========================================
    DETALHES DOS SERVIÇOS
 ========================================= */
 
@@ -2032,9 +2105,13 @@ margin-bottom:30px;
         align-items: center;
     }
 
-    .logo {
-    font-size: 24px;
+  .logo {
     text-align: left;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
 }
 
     .menu-toggle {
@@ -2081,6 +2158,17 @@ margin-bottom:30px;
         height: auto;
         min-height: auto;
         padding-bottom: 40px;
+
+        background:
+            linear-gradient(
+                rgba(0,0,0,.40),
+                rgba(0,0,0,.40)
+            ),
+            url("../images/hero-mobile.jpeg");
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .overlay {
@@ -2088,7 +2176,13 @@ margin-bottom:30px;
         padding-bottom: 40px;
     }
 
-}/* =========================================
+    .overlay h1 {
+        font-size: 42px;
+        line-height: 1.15;
+    }
+
+}
+/* =========================================
    BARRA DE CREDIBILIDADE
 ========================================= */
 
@@ -2503,4 +2597,98 @@ margin-bottom:30px;
 
 .training-content-item {
     min-height: 230px;
+}
+/* =========================================
+   PARCEIROS
+========================================= */
+
+.partners {
+    background: #ffffff;
+    padding: 80px 8%;
+}
+
+.partners .section-header {
+    margin-bottom: 45px;
+}
+
+.partners-grid {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0;
+}
+
+.partner-item {
+    flex: 1;
+
+    min-height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 45px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Separadores entre os parceiros */
+
+.partner-item + .partner-item {
+    border-left: 1px solid #dddddd;
+}
+
+.partner-item img {
+    width: auto;
+    height: auto;
+
+    max-width: 300px;
+    max-height: 150px;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================
+   PARCEIROS - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .partners {
+        padding: 65px 6%;
+    }
+
+    .partners .section-header {
+        margin-bottom: 35px;
+    }
+
+    .partners-grid {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .partner-item {
+        width: 100%;
+        min-height: 125px;
+        padding: 25px 20px;
+    }
+
+    .partner-item + .partner-item {
+        border-left: none;
+        border-top: 1px solid #dddddd;
+    }
+
+    .partner-item img {
+        max-width: 230px;
+        max-height: 100px;
+    }
 }
